@@ -92,7 +92,7 @@ try {
     }
 } catch (error) {
     console.error(err);
-        res.status(500).json({ error: 'Ошибка при добавлении книги' });
+        res.status(500).json({ error: 'Ошибка при изменении книги' });
 }
 })
 
