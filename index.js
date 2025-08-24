@@ -91,7 +91,8 @@ try {
             console.log("Книга изменена");
     }
 } catch (error) {
-    
+    console.error(err);
+        res.status(500).json({ error: 'Ошибка при добавлении книги' });
 }
 })
 
