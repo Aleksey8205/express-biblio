@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "title": "Мастер и Маргарита",
+    "description": "Роман Михаила Булгакова о любви, магии и судьбе.",
+    "author": "Михаил Булгаков",
+    "favorite": true,
+    "fileCover": "https://example.com/covers/master_i_margarita.jpg",
+    "fileName": "master_i_margarita.pdf"
+  },
+  {
+    "id": "2",
+    "title": "Война и мир",
+    "description": "Эпический роман Льва Толстого о жизни и судьбе в эпоху Наполеоновских войн.",
+    "author": "Лев Толстой",
+    "favorite": false,
+    "fileCover": "https://example.com/covers/voyna_i_mir.jpg",
+    "fileName": "voyna_i_mir.epub"
+  },
+  {
+    "id": "3",
+    "title": "1984",
+    "description": "Антиутопический роман Джорджа Оруэлла о тоталитарном обществе.",
+    "author": "Джордж Оруэлл",
+    "favorite": true,
+    "fileCover": "https://example.com/covers/1984.jpg",
+    "fileName": "1984.mobi"
+  },
+  {
+    "id": "c9789644-fb96-4c6f-a311-ab8664b9b359",
+    "title": "Робинзон ",
+    "description": "Описание отсутствует",
+    "author": "Даниэль Дефо",
+    "favorite": false,
+    "fileCover": "",
+    "fileName": ""
+  }
+]
