@@ -64,5 +64,25 @@
     "fileCover": "1756308535431-x.png",
     "fileName": "1756308535432-12313.pdf",
     "fileBook": "uploads\\1756308535432-12313.pdf"
+  },
+  {
+    "id": "013aa10d-0f70-4443-805c-580d57dfb811",
+    "title": "Война и мир",
+    "description": "Описание отсутствует",
+    "authors": "Неизвестный автор",
+    "favorite": "123",
+    "fileCover": "1756308978653-x.png",
+    "fileName": "1756308978654-12313.pdf",
+    "fileBook": "uploads\\1756308978654-12313.pdf"
+  },
+  {
+    "id": "e229b7e3-79ba-4b9c-be07-9bde73d2213b",
+    "title": "Война и мир",
+    "description": "Описание отсутствует",
+    "authors": "Неизвестный автор",
+    "favorite": "123",
+    "fileCover": "1756309433317-x.png",
+    "fileName": "1756309433318-12313.pdf",
+    "fileBook": "uploads\\1756309433318-12313.pdf"
   }
 ]

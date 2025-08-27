@@ -7,7 +7,7 @@ const router = express.Router();
 
 let parsedData;
 try {
-    const data = await fs.readFile(new URL('./booksDB.JSON', import.meta.url), 'utf8');
+    const data = await fs.readFile(new URL('../booksDB.JSON', import.meta.url), 'utf8');
     parsedData = JSON.parse(data);
 } catch (err) {
     console.error('Ошибка при чтении файла:', err);
@@ -55,7 +55,7 @@ router.post('/', upload.fields([{ name: 'file', maxCount: 1 }, { name: 'fileCove
 
         parsedData.push(newBook);
 
-        await fs.writeFile(new URL('./booksDB.JSON', import.meta.url), JSON.stringify(parsedData, null, 2));
+        await fs.writeFile(new URL('../booksDB.JSON', import.meta.url), JSON.stringify(parsedData, null, 2));
 
         res.json({
             message: "Книга добавлена",
@@ -75,7 +75,7 @@ router.put('/:id', async (req, res) => {
         const bookIndex = parsedData.findIndex((book) => book.id === id);
         if (bookIndex !== -1) {
             parsedData[bookIndex] = { ...updateBook, id };
-            await fs.writeFile(new URL('./booksDB.JSON', import.meta.url), JSON.stringify(parsedData, null, 2));
+            await fs.writeFile(new URL('../booksDB.JSON', import.meta.url), JSON.stringify(parsedData, null, 2));
             res.json({ message: "Книга обновлена" });
         } else {
             res.status(404).json({ error: 'Книга не найдена' });
@@ -92,7 +92,7 @@ router.delete('/:id', async (req, res) => {
         const bookIndex = parsedData.findIndex((book) => book.id === id);
         if (bookIndex !== -1) {
             parsedData.splice(bookIndex, 1);
-            await fs.writeFile(new URL('./booksDB.JSON', import.meta.url), JSON.stringify(parsedData, null, 2));
+            await fs.writeFile(new URL('../booksDB.JSON', import.meta.url), JSON.stringify(parsedData, null, 2));
             res.json({ message: "Книга удалена" });
         } else {
             res.status(404).json({ error: 'Книга не найдена' });
