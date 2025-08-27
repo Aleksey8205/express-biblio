@@ -15,7 +15,7 @@
     "author": "Лев Толстой",
     "favorite": false,
     "fileCover": "https://example.com/covers/voyna_i_mir.jpg",
-    "fileName": "voyna_i_mir.epub"
+    "fileName": "voyna_i_mir.pdf"
   },
   {
     "id": "3",
@@ -34,5 +34,35 @@
     "favorite": false,
     "fileCover": "",
     "fileName": ""
+  },
+  {
+    "id": "f0204faa-a960-4f1d-8eb6-cf6ab695b9d3",
+    "title": "Война и мир",
+    "description": "Описание отсутствует",
+    "authors": "Неизвестный автор",
+    "favorite": "123",
+    "fileCover": "1756308267017-x.png",
+    "fileName": "1756308267017-12313.pdf",
+    "fileBook": "uploads\\1756308267017-12313.pdf"
+  },
+  {
+    "id": "9959fb30-15c9-46b0-b48c-88fb198558c3",
+    "title": "Война и мир",
+    "description": "Описание отсутствует",
+    "authors": "Неизвестный автор",
+    "favorite": "123",
+    "fileCover": "1756308394085-x.png",
+    "fileName": "1756308394086-12313.pdf",
+    "fileBook": "uploads\\1756308394086-12313.pdf"
+  },
+  {
+    "id": "74efe0f2-f557-4db8-80f7-5aeea251de35",
+    "title": "Война и мир",
+    "description": "Описание отсутствует",
+    "authors": "Неизвестный автор",
+    "favorite": "123",
+    "fileCover": "1756308535431-x.png",
+    "fileName": "1756308535432-12313.pdf",
+    "fileBook": "uploads\\1756308535432-12313.pdf"
   }
 ]
