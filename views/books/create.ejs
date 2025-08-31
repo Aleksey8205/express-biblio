@@ -1,0 +1,26 @@
+<%- include('../port/layout-start', {title: title}) %>
+<div>
+    <h1>Создание новой книги</h1>
+    <form enctype="multipart/form-data" action="/api/books/creates" method="POST">
+        <label>Название:</label><br>
+        <input type="text" name="title" placeholder="Название книги" required><br>
+        
+        <label>Описание:</label><br>
+        <textarea name="description" rows="4" cols="50" placeholder="Описание книги"></textarea><br>
+        
+        <label>Авторы:</label><br>
+        <input type="text" name="authors" placeholder="Авторы книги" required><br>
+        
+        <label>Обложка:</label><br>
+        <input type="file" name="fileCover" accept="image/png,image/jpeg"><br>
+        
+        <label>Файл книги:</label><br>
+        <input type="file" name="file" accept="application/pdf,.epub"><br>
+        
+        <label>Сделать любимой?</label><br>
+        <input type="checkbox" name="favorite" value="true"><br>
+        
+        <button type="submit">Создать книгу</button>
+    </form>
+</div>
+<%- include('../port/layout-end') %>

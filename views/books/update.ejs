@@ -1,0 +1,42 @@
+<%- include('../port/layout-start', {title: title}) %>
+    <div>
+        <h1>Редактирование книги</h1>
+        <form id="myForm" enctype="multipart/form-data" action="/api/books/<%= book.id %>">
+            <input type="hidden" name="_method" value="PUT">
+
+            <label>Название:</label><br>
+            <textarea name="title" rows="1" cols="40" placeholder="Название"><%= book.title %></textarea><br>
+
+            <label>Описание:</label><br>
+            <textarea name="description" rows="4" cols="50"
+                placeholder="Описание"><%= book.description %></textarea><br>
+
+            <label>Авторы:</label><br>
+            <textarea name="author" rows="1" cols="40" placeholder="Автор"><%= book.author %></textarea><br>
+
+            <label>Сделать любимой?</label><br>
+            <input type="checkbox" name="favorite" value="true" <%=book.favorite ? 'checked' : 'false' %>>
+
+            <button type="submit">Редактировать</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('myForm').addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const formData = new FormData(event.target);
+            try {
+                const response = await fetch(`/api/books/<%= book.id %>`, {
+                    method: 'PUT',
+                    body: formData
+                });
+                if (!response.ok) {
+                    throw new Error(`Ошибка сервера: ${response.status}`);
+                }
+                window.location.href = "/api/books";
+            } catch (err) {
+                console.error('Ошибка:', err);
+            }
+        });
+    </script>
+    <%- include('../port/layout-end') %>

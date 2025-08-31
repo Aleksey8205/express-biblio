@@ -1,0 +1,39 @@
+<%- include('../port/layout-start', {title: title}) %>
+  <%- include('../port/menu') %>
+    <% if (Array.isArray(parsedData) && parsedData.length> 0) { %>
+      <ul>
+        <% parsedData.forEach(function(book) { %>
+          <li>
+            <span>
+              <%= book.title %>
+            </span> (<%= book.authors %>)
+              <a href="/api/books/<%= book.id %>">Подробнее</a> |
+              <a href="/api/books/<%= book.id %>/update">Редактировать</a> |
+              <button class="deleteBook" data-book-id="<%= book.id %>">Удалить</button>
+          </li>
+          <% }); %>
+      </ul>
+      <% } else { %>
+        <p>Нет книг.</p>
+        <% } %>
+
+        <script>
+          document.querySelectorAll('.deleteBook').forEach(button => {
+            button.addEventListener('click', async (event) => {
+              event.preventDefault();
+              const bookID = button.getAttribute('data-book-id');
+              try {
+                const response = await fetch(`/api/books/${bookID}`, {
+                  method: 'DELETE'
+                });
+                if(response.ok) {
+                  location.reload()
+                }
+              } catch (err) {
+                console.error('Ошибка:', err);
+              }
+            });
+          });
+        </script>
+        
+          <%- include('../port/layout-end') %>

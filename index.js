@@ -1,10 +1,19 @@
 import express from 'express';
-import router from './routes/books.js';
+import indexRouter from "./routes/index.js"
+import bookRouter from "./routes/books.js"
+import methodOverride  from 'method-override';
 
 const app = express();
-app.use(express.json());
+app.use(methodOverride('_method'));
 
-app.use('/api/books', router);
+
+app.use(express.urlencoded())
+app.use(express.json());
+app.set("view engine", "ejs")
+app.use(express.static('public'));
+
+app.use('/', indexRouter)
+app.use('/api/books', bookRouter);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
