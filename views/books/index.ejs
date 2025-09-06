@@ -1,21 +1,19 @@
 <%- include('../port/layout-start', {title: title}) %>
   <%- include('../port/menu') %>
-    <% if (Array.isArray(parsedData) && parsedData.length> 0) { %>
-      <ul>
-        <% parsedData.forEach(function(book) { %>
-          <li>
-            <span>
-              <%= book.title %>
-            </span> (<%= book.authors %>)
-              <a href="/api/books/<%= book.id %>">Подробнее</a> |
-              <a href="/api/books/<%= book.id %>/update">Редактировать</a> |
-              <button class="deleteBook" data-book-id="<%= book.id %>">Удалить</button>
-          </li>
-          <% }); %>
-      </ul>
-      <% } else { %>
-        <p>Нет книг.</p>
-        <% } %>
+  <% if (Array.isArray(books) && books.length > 0) { %>
+    <ul>
+      <% books.forEach(function(book) { %>
+        <li>
+          <span><%= book.title %></span> (<%= book.authors %>) 
+          <a href="/api/books/<%= book.id %>">Подробнее</a> |
+          <a href="/api/books/<%= book.id %>/update">Редактировать</a> |
+          <button class="deleteBook" data-book-id="<%= book.id %>">Удалить</button>
+        </li>
+      <% }); %>
+    </ul>
+  <% } else { %>
+    <p>Нет книг.</p>
+  <% } %>
 
         <script>
           document.querySelectorAll('.deleteBook').forEach(button => {

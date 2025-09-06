@@ -6,6 +6,14 @@
     </div>
     <h1><%= book.title %></h1>
     <p><%= book.description %></p>
-    <p><%= book.author %></p>
+    <p><%= book.authors %></p>
+    <p>Количество просмотров: <%= book.viewCount %></p>
+    <p> файл <%= book.fileCover %></p>
+    <p> файл <%= book.fileName %></p>
+    <% if(book.favorite === true) { %>
+        <p>Любимая книга</p>
+    <% } else { %>
+        <p>Книга еще не добавлена в любимые</p>
+    <% } %>
 </div>
 <%- include('../port/layout-end') %>

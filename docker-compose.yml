@@ -1,0 +1,33 @@
+version: '3.7'
+services:
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db  
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    restart: always
+
+  app:
+    build: .
+    container_name: my_app
+    depends_on:
+      - mongodb
+    ports:
+      - "3000:3000"
+    environment:
+      DB_HOST: mongodb
+      DB_USER: root
+      DB_PASS: example
+      DB_NAME: my_database
+    volumes:
+      - ./:/code    
+    command: npm run dev  
+    restart: on-failure
+
+volumes:
+  mongo_data: {}
